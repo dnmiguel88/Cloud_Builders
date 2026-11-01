@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meu-app
+  labels:
+    app: meu-app
+  annotations:
+    # Atualiza a imagem do container automaticamente quando um novo build termina
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"meu-app:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"meu-app\")].image"}]
+spec:
+  # "replicas" fica de fora de propósito: quem controla o número de pods é o HPA
+  selector:
+    matchLabels:
+      deployment: meu-app
+  template:
+    metadata:
+      labels:
+        app: meu-app
+        deployment: meu-app
+    spec:
+      # O volume é ReadWriteOnce: só pods do MESMO nó conseguem montá-lo.
+      # Esta regra mantém as réplicas juntas. Se o seu storage for ReadWriteMany,
+      # pode remover o bloco "affinity".
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  deployment: meu-app
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - name: meu-app
+          # Substituída pelo trigger acima assim que a imagem existir no registry
+          image: meu-app:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: DATA_DIR
+              value: /data
+          resources:
+            requests:        # o HPA calcula a porcentagem em cima do request
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+          volumeMounts:
+            - name: dados
+              mountPath: /data
+      volumes:
+        - name: dados
+          persistentVolumeClaim:
+            claimName: meu-app-pvc

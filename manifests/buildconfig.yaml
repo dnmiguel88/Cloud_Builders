@@ -1,0 +1,21 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: meu-app
+  labels:
+    app: meu-app
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/dnmiguel88/Cloud_Builders.git
+      ref: main
+  strategy:
+    type: Docker
+    dockerStrategy: {}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: meu-app:latest
+  triggers:
+    - type: ConfigChange
