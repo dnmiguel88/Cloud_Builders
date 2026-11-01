@@ -1,4 +1,4 @@
-<img width="1873" height="988" alt="3" src="https://github.com/user-attachments/assets/69bbfff0-27ee-4e93-ac32-0e8a55b2afea" /># Cloud Builders: deploy no OpenShift com HPA e Persistent Volume
+# Cloud Builders: deploy no OpenShift com HPA e Persistent Volume
 
 Aplicação containerizada de exemplo implantada no **Red Hat OpenShift** (Developer Sandbox), com:
 
