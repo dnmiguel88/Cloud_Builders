@@ -131,7 +131,14 @@ kill $(jobs -p)                       # pare a carga; depois de alguns minutos o
 
 ## Evidências
 
-> Adicione aqui os prints: contador antes/depois de deletar o pod, `oc get hpa` com réplicas subindo e a página aberta pela URL da Route.
+<img width="1873" height="988" alt="3" src="https://github.com/user-attachments/assets/9540f3f7-e292-4ce7-99db-6c49bab4bcb0" />
+<img width="1873" height="988" alt="3" src="https://github.com/user-attachments/assets/9214f37d-f41a-4341-a793-2279888453f0" />
+<img width="1873" height="988" alt="7" src="https://github.com/user-attachments/assets/8a6ec34f-8bde-433e-b400-584f6d3d6a59" />
+<img width="1873" height="988" alt="8" src="https://github.com/user-attachments/assets/793a7349-38b3-487a-aead-ab48f0f33cd6" />
+<img width="1873" height="988" alt="9" src="https://github.com/user-attachments/assets/a6882dc7-affa-46d9-ac4f-6843aee97586" />
+<img width="1873" height="1027" alt="10" src="https://github.com/user-attachments/assets/0e24d5ad-47b6-40ed-bcbd-388a16609acb" />
+<img width="1873" height="989" alt="11" src="https://github.com/user-attachments/assets/a652b1fe-c6d1-48f2-93e8-5a15eb4a3a55" />
+
 
 ## Decisões e limitações
 
