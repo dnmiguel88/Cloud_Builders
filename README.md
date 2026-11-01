@@ -1,4 +1,4 @@
-# Cloud Builders: deploy no OpenShift com HPA e Persistent Volume
+<img width="1873" height="988" alt="3" src="https://github.com/user-attachments/assets/69bbfff0-27ee-4e93-ac32-0e8a55b2afea" /># Cloud Builders: deploy no OpenShift com HPA e Persistent Volume
 
 Aplicação containerizada de exemplo implantada no **Red Hat OpenShift** (Developer Sandbox), com:
 
@@ -79,7 +79,11 @@ kill $(jobs -p)                       # pare a carga; depois de alguns minutos o
 
 ## Evidências
 
-> Adicione aqui os prints: contador antes/depois de deletar o pod, `oc get hpa` com réplicas subindo e a página aberta pela URL da Route.
+<img width="1861" height="976" alt="2" src="https://github.com/user-attachments/assets/9bbd0086-c604-45cc-aff1-795042cd7f30" />
+<img width="1873" height="988" alt="3" src="https://github.com/user-attachments/assets/92007689-2f48-4d09-af9f-1eedf37ca127" />
+<img width="1873" height="1027" alt="10" src="https://github.com/user-attachments/assets/89f7afde-8e25-4af1-8a7b-3194e9d93d51" />
+<img width="1873" height="988" alt="8" src="https://github.com/user-attachments/assets/120b1331-bb76-4e6b-9b5c-ec81b71286f8" />
+<img width="1873" height="988" alt="9" src="https://github.com/user-attachments/assets/bd94c131-e031-425a-961a-042af5c18a1b" />
 
 ## Decisões e limitações
 
