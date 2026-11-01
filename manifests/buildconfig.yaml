@@ -19,3 +19,9 @@ spec:
       name: meu-app:latest
   triggers:
     - type: ConfigChange
+    # Webhook do GitHub. O segredo NÃO fica neste arquivo: ele vem do Secret
+    # "meu-app-webhook" (chave WebHookSecretKey), criado por comando (veja o README).
+    - type: GitHub
+      github:
+        secretReference:
+          name: meu-app-webhook
